@@ -16,8 +16,8 @@ Vue.filter("number_format", function (val) {
 var app = new Vue({
   el: "#app",
   data: {
-    //表示中の商品数
-    count: 0,
+    //表示中の商品数→computed内に移動　countプロパティ
+
     //セール対象のチェック状態（true：チェックあり、false:チェックなし）
     showSaleItem: false,
     //「送料無料」のチェック状態（true：チェックあり、false:チェックなし）
@@ -27,6 +27,7 @@ var app = new Vue({
     //商品リスト
     products: [
       {
+        id: 1,
         name: "Micheal<br>スマホケース1",
         price: 1580,
         image: "img/01.jpg",
@@ -34,6 +35,7 @@ var app = new Vue({
         isSale: true,
       },
       {
+        id: 2,
         name: "Micheal<br>スマホケース2",
         price: 1480,
         image: "img/02.jpg",
@@ -41,6 +43,7 @@ var app = new Vue({
         isSale: true,
       },
       {
+        id: 3,
         name: "Micheal<br>スマホケース3",
         price: 1380,
         image: "img/03.jpg",
@@ -48,6 +51,7 @@ var app = new Vue({
         isSale: false,
       },
       {
+        id: 4,
         name: "Micheal<br>スマホケース4",
         price: 1280,
         image: "img/04.jpg",
@@ -55,6 +59,7 @@ var app = new Vue({
         isSale: true,
       },
       {
+        id: 5,
         name: "Micheal<br>スマホケース5",
         price: 1180,
         image: "img/05.jpg",
@@ -62,6 +67,7 @@ var app = new Vue({
         isSale: false,
       },
       {
+        id: 6,
         name: "Micheal<br>スマホケース6",
         price: 980,
         image: "img/06.jpg",
@@ -86,18 +92,28 @@ var app = new Vue({
           newList.push(this.products[i]);
         }
       }
+
+      if (this.sortOrder === 1) {
+      } else if (this.sortOrder === 2) {
+        newList.sort(function (a, b) {
+          return a.price - b.price;
+        });
+      }
       return newList;
+    },
+    count: function () {
+      return this.filteredList.length;
     },
   },
 
-  watch: {
-    //セール対象チェックボックスの状態を監視するウォッチャ
-    showSaleItem: function (newVal, oldVal) {
-      console.log("sale呼び出されました。");
-    },
-    //送料無料チェックボックスの状態を監視するウォッチャ
-    showDelvFree: function (newVal, oldVal) {
-      console.log("Delv呼び出されました。");
-    },
-  },
+  // watch: {
+  //   //セール対象チェックボックスの状態を監視するウォッチャ
+  //   showSaleItem: function (newVal, oldVal) {
+  //     console.log("sale呼び出されました。");
+  //   },
+  //   //送料無料チェックボックスの状態を監視するウォッチャ
+  //   showDelvFree: function (newVal, oldVal) {
+  //     console.log("Delv呼び出されました。");
+  //   },
+  // },
 });

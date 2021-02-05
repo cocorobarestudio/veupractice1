@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>データ読み込み</title>
+  </head>
+  <body>
+    　<button id="load">読み込み</button>
+    <div id="result"></div>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.12/dist/vue.js"></script>
+    <script>
+      var btnLoad = document.querySelector("#load");
+      btnLoad.addEventListener("click", function (event) {
+        //ツボコツp.165【手順1】XMLHttpRequestオブジェクトのインスタンス作成
+        var xmlHttpRequest = new XMLHttpRequest();
+        //【手順２】通信状態の変化を監視するイベントハンドラ
+        xmlHttpRequest.onreadystatechange = function () {
+          //レスポンスの受信が正常に完了した時
+          if (this.readyState == 4 && this.state == 200) {
+            console.log(this.readyState, this.response);
+          }
+        };
+        //【手順3】レスポンスの形式を指定する
+        xmlHttpRequest.responseType = "json";
+
+        //【手順4】リクエストメソッドと読み込むファイルのパスを指定する
+        XmlHttpRequest.open("GET", "products.json");
+
+        //【手順5】リクエストを送信する
+        xmlHttpRequest.send();
+      });
+    </script>
+  </body>
+</html>

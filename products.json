@@ -1,0 +1,49 @@
+[
+    {
+      "id": 1,
+      "name": "Micheal<br>スマホケース1",
+      "price": 1580,
+      "image": "img/01.jpg",
+      "delv": 0,
+      "isSale": true
+    },
+    {
+        "id": 2,
+        "name:" "Micheal<br>スマホケース2",
+        "price": 1480,
+        "image": "img/02.jpg",
+        "delv": 0,
+        "isSale": true
+    },
+    {
+      "id": 3,
+      "nane": "Micheal<br>スマホケース3",
+      "price": 1380,
+      "image": "img/03.jpg",
+      "delv": 400,
+      "isSale": false
+    },
+    {
+      "id": 4,
+      "nane": "Micheal<br>スマホケース4",
+      "price": 1280,
+      "image": "img/04.jpg",
+      "delv": 200,
+      "isSale": true
+    },
+    {
+      "id": 5,
+      "nane": "Micheal<br>スマホケース5",
+      "price": 1180,
+      "image": "img/05.jpg",
+      "delv": 400,
+      "isSale": false
+    },
+    {
+      "id": 6,
+      "nane": "Micheal<br>スマホケース6",
+      "price": 980,
+      "image": "img/06.jpg",
+      "delv": 0,
+      "isSale": false
+    }
