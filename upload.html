@@ -24,11 +24,9 @@
         };
         //【手順3】レスポンスの形式を指定する
         xmlHttpRequest.responseType = "json";
-
         //【手順4】リクエストメソッドと読み込むファイルのパスを指定する
-        XmlHttpRequest.open("GET", "products.json");
-
-        //【手順5】リクエストを送信する
+        xmlHttpRequest.open("GET", "products.json");
+        //【手順5】リクエストを送信する（非同期通信を開始する）
         xmlHttpRequest.send();
       });
     </script>
